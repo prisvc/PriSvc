@@ -1,0 +1,639 @@
+random: Trying to read entropy from /dev/random
+Configuration file: myeap.conf
+nl80211: TDLS supported
+nl80211: TDLS external setup
+nl80211: Supported cipher 00-0f-ac:1
+nl80211: Supported cipher 00-0f-ac:5
+nl80211: Supported cipher 00-0f-ac:2
+nl80211: Supported cipher 00-0f-ac:4
+nl80211: Supported cipher 00-0f-ac:6
+nl80211: Using driver-based off-channel TX
+nl80211: TDLS channel switch
+nl80211: Driver-advertised extended capabilities (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Driver-advertised extended capabilities mask (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Use separate P2P group interface (driver advertised support)
+nl80211: Enable multi-channel concurrent (driver advertised support)
+nl80211: use P2P_DEVICE support
+nl80211: interface wlp1s0 in phy phy0
+nl80211: Set mode ifindex 3 iftype 3 (AP)
+nl80211: Failed to set interface 3 to mode 3: -16 (Device or resource busy)
+nl80211: Try mode change after setting interface down
+nl80211: Set mode ifindex 3 iftype 3 (AP)
+nl80211: Mode change succeeded while interface is down
+nl80211: Setup AP(wlp1s0) - device_ap_sme=0 use_monitor=0
+nl80211: Subscribe to mgmt frames with AP handle 0x55a12b379a30
+nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x55a12b379a30 match=
+nl80211: Register frame type=0x0 (WLAN_FC_STYPE_ASSOC_REQ) nl_handle=0x55a12b379a30 match=
+nl80211: Register frame type=0x20 (WLAN_FC_STYPE_REASSOC_REQ) nl_handle=0x55a12b379a30 match=
+nl80211: Register frame type=0xa0 (WLAN_FC_STYPE_DISASSOC) nl_handle=0x55a12b379a30 match=
+nl80211: Register frame type=0xc0 (WLAN_FC_STYPE_DEAUTH) nl_handle=0x55a12b379a30 match=
+nl80211: Register frame type=0x40 (WLAN_FC_STYPE_PROBE_REQ) nl_handle=0x55a12b379a30 match=
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=04
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=0501
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=0503
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=0504
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=06
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=08
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=11
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55a12b379a30 match=7f
+rfkill: initial event: idx=3 type=1 op=0 soft=0 hard=0
+nl80211: Add own interface ifindex 3 (ifidx_reason -1)
+nl80211: if_indices[16]: 3(-1)
+phy: phy0
+BSS count 1, BSSID mask 00:00:00:00:00:00 (0 bits)
+nl80211: Regulatory information - country=CN
+nl80211: 2402-2437 @ 40 MHz 22 mBm
+nl80211: 2422-2462 @ 40 MHz 22 mBm
+nl80211: 2447-2472 @ 40 MHz 22 mBm
+nl80211: 2457-2482 @ 40 MHz 22 mBm (no IR)
+nl80211: 5170-5190 @ 80 MHz 22 mBm (no outdoor) (no IR)
+nl80211: 5190-5210 @ 80 MHz 22 mBm (no outdoor) (no IR)
+nl80211: 5210-5230 @ 80 MHz 22 mBm (no outdoor) (no IR)
+nl80211: 5230-5250 @ 80 MHz 22 mBm (no outdoor) (no IR)
+nl80211: 5250-5270 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5270-5290 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5290-5310 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5310-5330 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5490-5510 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5510-5530 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5530-5550 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5550-5570 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5570-5590 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5590-5610 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5610-5630 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5630-5650 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5650-5670 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5670-5690 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5690-5710 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5710-5730 @ 80 MHz 22 mBm (DFS) (no IR)
+nl80211: 5735-5755 @ 80 MHz 22 mBm (no IR)
+nl80211: 5755-5775 @ 80 MHz 22 mBm (no IR)
+nl80211: 5775-5795 @ 80 MHz 22 mBm (no IR)
+nl80211: 5795-5815 @ 80 MHz 22 mBm (no IR)
+nl80211: 5815-5835 @ 20 MHz 22 mBm (no IR)
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[NO_IR] 2472[NO_IR] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[NO_IR] 2472[NO_IR] 2484[DISABLED]
+Allowed channel: mode=1 chan=1 freq=2412 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=2 freq=2417 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=3 freq=2422 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=4 freq=2427 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=5 freq=2432 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=6 freq=2437 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=7 freq=2442 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=8 freq=2447 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=9 freq=2452 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=10 freq=2457 MHz max_tx_power=22 dBm
+Allowed channel: mode=1 chan=11 freq=2462 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=1 freq=2412 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=2 freq=2417 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=3 freq=2422 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=4 freq=2427 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=5 freq=2432 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=6 freq=2437 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=7 freq=2442 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=8 freq=2447 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=9 freq=2452 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=10 freq=2457 MHz max_tx_power=22 dBm
+Allowed channel: mode=0 chan=11 freq=2462 MHz max_tx_power=22 dBm
+Completing interface initialization
+Mode: IEEE 802.11g  Channel: 6  Frequency: 2437 MHz
+DFS 0 channels required radar detection
+nl80211: Set freq 2437 (ht_enabled=0, vht_enabled=0, he_enabled=0, bandwidth=20 MHz, cf1=2437 MHz, cf2=0 MHz)
+  * freq=2437
+  * he_enabled=0
+  * vht_enabled=0
+  * ht_enabled=0
+  * channel_type=0
+RATE[0] rate=10 flags=0x1
+RATE[1] rate=20 flags=0x1
+RATE[2] rate=55 flags=0x1
+RATE[3] rate=110 flags=0x1
+RATE[4] rate=60 flags=0x0
+RATE[5] rate=90 flags=0x0
+RATE[6] rate=120 flags=0x0
+RATE[7] rate=180 flags=0x0
+RATE[8] rate=240 flags=0x0
+RATE[9] rate=360 flags=0x0
+RATE[10] rate=480 flags=0x0
+RATE[11] rate=540 flags=0x0
+hostapd_setup_bss(hapd=0x55a12b372ef0 (wlp1s0), first=1)
+wlp1s0: Flushing old station entries
+nl80211: flush -> DEL_STATION wlp1s0 (all)
+wlp1s0: Deauthenticate all stations
+nl80211: send_mlme - da= ff:ff:ff:ff:ff:ff noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0xc0 (WLAN_FC_STYPE_DEAUTH) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=0 offchanok=0
+CMD_FRAME - hexdump(len=26): c0 00 00 00 ff ff ff ff ff ff a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 02 00
+nl80211: Frame command failed: ret=-16 (Device or resource busy) (freq=2437 wait=0)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=(nil) key_idx=0 set_tx=0 seq_len=0 key_len=0
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=(nil) key_idx=1 set_tx=0 seq_len=0 key_len=0
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=(nil) key_idx=2 set_tx=0 seq_len=0 key_len=0
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=(nil) key_idx=3 set_tx=0 seq_len=0 key_len=0
+Using interface wlp1s0 with hwaddr a4:02:b9:19:56:45 and ssid "myhotspot"
+Deriving WPA PSK based on passphrase
+SSID - hexdump_ascii(len=9):
+     6d 79 68 6f 74 73 70 6f 74                        myhotspot       
+PSK (ASCII passphrase) - hexdump_ascii(len=10): [REMOVED]
+PSK (from passphrase) - hexdump(len=32): [REMOVED]
+random: Got 20/20 random bytes
+Get randomness: len=32 entropy=0
+GMK - hexdump(len=32): [REMOVED]
+Get randomness: len=32 entropy=0
+Key Counter - hexdump(len=32): [REMOVED]
+WPA: Delay group state machine start until Beacon frames have been configured
+nl80211: Set beacon (beacon_set=0)
+nl80211: Beacon head - hexdump(len=60): 80 00 00 00 ff ff ff ff ff ff a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06
+nl80211: Beacon tail - hexdump(len=69): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=myhotspot
+  * beacon_int=100
+  * dtim_period=2
+nl80211: hidden SSID not in use
+nl80211: privacy=1
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x3
+nl80211: key_mgmt_suites=0x1
+nl80211: pairwise_ciphers=0x18
+nl80211: group_cipher=0x8
+nl80211: beacon_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: proberesp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: assocresp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: multicast to unicast disabled on interface wlp1s0
+WPA: Start group state machine to set initial keys
+WPA: group state machine entering state GTK_INIT (VLAN-ID 0)
+Get randomness: len=32 entropy=0
+GTK - hexdump(len=32): [REMOVED]
+WPA: group state machine entering state SETKEYSDONE (VLAN-ID 0)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=2 addr=0x55a129e7e7fa key_idx=1 set_tx=1 seq_len=0 key_len=32
+nl80211: KEY_DATA - hexdump(len=32): [REMOVED]
+   broadcast key
+nl80211: Set wlp1s0 operstate 0->1 (UP)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+nl80211: TX queue param set: queue=0 aifs=1 cw_min=3 cw_max=7 burst_time=15 --> res=0
+nl80211: TX queue param set: queue=1 aifs=1 cw_min=7 cw_max=15 burst_time=30 --> res=0
+nl80211: TX queue param set: queue=2 aifs=3 cw_min=15 cw_max=63 burst_time=0 --> res=0
+nl80211: TX queue param set: queue=3 aifs=7 cw_min=15 cw_max=1023 burst_time=0 --> res=0
+wlp1s0: interface state UNINITIALIZED->ENABLED
+wlp1s0: AP-ENABLED 
+wlp1s0: Setup of interface done.
+ctrl_iface not configured!
+RTM_NEWLINK: ifi_index=3 ifname=wlp1s0 operstate=2 linkmode=0 ifi_family=0 ifi_flags=0x1002 ()
+nl80211: Ignore interface down event since interface wlp1s0 is up
+RTM_NEWLINK: ifi_index=3 ifname=wlp1s0 operstate=2 linkmode=0 ifi_family=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp1s0 operstate=6 linkmode=0 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp1s0 operstate=5 linkmode=0 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+nl80211: Set IF_OPER_UP again based on ifi_flags and expected operstate
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+RTM_NEWLINK: ifi_index=3 ifname=wlp1s0 operstate=6 linkmode=0 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 70 9e 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0x9e70 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 80 9e 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-67 fc=0x40 seq_ctrl=0x9e80 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 30 9f 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-68 fc=0x40 seq_ctrl=0x9f30 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 40 9f 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0x9f40 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 50 9f 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-68 fc=0x40 seq_ctrl=0x9f50 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 00 a0 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-69 fc=0x40 seq_ctrl=0xa000 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff d0 a0 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-70 fc=0x40 seq_ctrl=0xa0d0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=ec:f4:51:73:db:11
+nl80211: MLME event frame - hexdump(len=104): 40 00 00 00 ff ff ff ff ff ff ec f4 51 73 db 11 ff ff ff ff ff ff 40 4d 00 00 01 04 02 04 0b 16 32 08 0c 12 18 24 30 48 60 6c 03 01 06 2d 1a bc 09 1b ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7f 08 05 00 08 00 00 00 00 40 dd 08 00 50 f2 08 00 14 00 97 dd 09 00 10 18 02 01 00 1c 00 00
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=ec:f4:51:73:db:11 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-79 fc=0x40 seq_ctrl=0x4d40 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=104
+nl80211: send_mlme - da= ec:f4:51:73:db:11 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=1 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 ec f4 51 73 db 11 a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted (no ACK); cookie 0x0
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff b0 a1 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0xa1b0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff 70 1b 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 05 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-67 fc=0x40 seq_ctrl=0x1b70 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+Ignore Probe Request due to DS Params mismatch: chan=6 != ds.chan=5
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff 90 1b 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 06 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-67 fc=0x40 seq_ctrl=0x1b90 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+nl80211: send_mlme - da= da:a1:19:06:e3:e9 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=1 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 da a1 19 06 e3 e9 a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted (no ACK); cookie 0x0
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff a0 1b 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 06 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-65 fc=0x40 seq_ctrl=0x1ba0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+nl80211: send_mlme - da= da:a1:19:06:e3:e9 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=1 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 da a1 19 06 e3 e9 a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted (no ACK); cookie 0x0
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 90 a2 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-68 fc=0x40 seq_ctrl=0xa290 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=a4:02:b9:19:56:45 A2=f0:0f:ec:b3:a5:ac
+nl80211: MLME event frame - hexdump(len=54): 40 00 3a 01 a4 02 b9 19 56 45 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 80 1d 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 0c 12 96 18 24 03 01 06 32 04 30 48 60 6c
+nl80211: Frame event
+nl80211: RX frame da=a4:02:b9:19:56:45 sa=f0:0f:ec:b3:a5:ac bssid=a4:02:b9:19:56:45 freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0x1d80 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=54
+nl80211: send_mlme - da= f0:0f:ec:b3:a5:ac noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=0 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted; cookie 0x97
+nl80211: Event message available
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp1s0
+nl80211: MLME event 60 (NL80211_CMD_FRAME_TX_STATUS) on wlp1s0(a4:02:b9:19:56:45) A1=f0:0f:ec:b3:a5:ac A2=a4:02:b9:19:56:45
+nl80211: MLME event frame - hexdump(len=129): 50 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX status event
+wlp1s0: Event TX_STATUS (16) received
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=a4:02:b9:19:56:45 A2=f0:0f:ec:b3:a5:ac
+nl80211: MLME event frame - hexdump(len=30): b0 00 3a 01 a4 02 b9 19 56 45 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 00 00 00 00 01 00 00 00
+nl80211: Frame event
+nl80211: RX frame da=a4:02:b9:19:56:45 sa=f0:0f:ec:b3:a5:ac bssid=a4:02:b9:19:56:45 freq=2437 ssi_signal=-65 fc=0xb0 seq_ctrl=0x0 stype=11 (WLAN_FC_STYPE_AUTH) len=30
+wlp1s0: Event RX_MGMT (18) received
+mgmt::auth
+authentication: STA=f0:0f:ec:b3:a5:ac auth_alg=0 auth_transaction=1 status_code=0 wep=0 seq_ctrl=0x0
+  New STA
+ap_sta_add: register ap_handle_timer timeout for f0:0f:ec:b3:a5:ac (300 seconds - ap_max_inactivity)
+nl80211: sta_remove -> DEL_STATION wlp1s0 f0:0f:ec:b3:a5:ac --> -2 (No such file or directory)
+nl80211: Add STA f0:0f:ec:b3:a5:ac
+  * supported rates - hexdump(len=4): 02 04 0b 16
+  * capability=0x0
+  * aid=1 (UNASSOC_STA workaround)
+  * listen_interval=0
+  * flags set=0x0 mask=0xa0
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: authentication OK (open system)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-AUTHENTICATE.indication(f0:0f:ec:b3:a5:ac, OPEN_SYSTEM)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-DELETEKEYS.request(f0:0f:ec:b3:a5:ac)
+authentication reply: STA=f0:0f:ec:b3:a5:ac auth_alg=0 auth_transaction=2 resp=0 (IE len=0) (dbg=handle-auth)
+nl80211: send_mlme - da= f0:0f:ec:b3:a5:ac noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0xb0 (WLAN_FC_STYPE_AUTH) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=0 offchanok=0
+CMD_FRAME - hexdump(len=30): b0 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 02 00 00 00
+nl80211: Frame TX command accepted; cookie 0x98
+nl80211: Event message available
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp1s0
+nl80211: New station f0:0f:ec:b3:a5:ac
+nl80211: Event message available
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp1s0
+nl80211: MLME event 60 (NL80211_CMD_FRAME_TX_STATUS) on wlp1s0(a4:02:b9:19:56:45) A1=f0:0f:ec:b3:a5:ac A2=a4:02:b9:19:56:45
+nl80211: MLME event frame - hexdump(len=30): b0 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 02 00 00 00
+nl80211: Frame TX status event
+wlp1s0: Event TX_STATUS (16) received
+mgmt::auth cb
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: authenticated
+nl80211: Set STA flags - ifname=wlp1s0 addr=f0:0f:ec:b3:a5:ac total_flags=0x20 flags_or=0x0 flags_and=0xfffffff1 authorized=0
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=a4:02:b9:19:56:45 A2=f0:0f:ec:b3:a5:ac
+nl80211: MLME event frame - hexdump(len=113): 00 00 3a 01 a4 02 b9 19 56 45 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 10 00 11 04 03 00 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 21 02 04 14 dd 08 ac 85 3d 82 01 00 00 00 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 3b 14 51 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82
+nl80211: Frame event
+nl80211: RX frame da=a4:02:b9:19:56:45 sa=f0:0f:ec:b3:a5:ac bssid=a4:02:b9:19:56:45 freq=2437 ssi_signal=-67 fc=0x0 seq_ctrl=0x10 stype=0 (WLAN_FC_STYPE_ASSOC_REQ) len=113
+wlp1s0: Event RX_MGMT (18) received
+mgmt::assoc_req
+association request: STA=f0:0f:ec:b3:a5:ac capab_info=0x411 listen_interval=3 seq_ctrl=0x10
+  new AID 1
+nl80211: Set beacon (beacon_set=1)
+nl80211: Beacon head - hexdump(len=60): 80 00 00 00 ff ff ff ff ff ff a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06
+nl80211: Beacon tail - hexdump(len=69): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=myhotspot
+  * beacon_int=100
+  * dtim_period=2
+nl80211: hidden SSID not in use
+nl80211: privacy=1
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x3
+nl80211: key_mgmt_suites=0x1
+nl80211: pairwise_ciphers=0x18
+nl80211: group_cipher=0x8
+nl80211: beacon_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: proberesp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: assocresp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: multicast to unicast disabled on interface wlp1s0
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: association OK (aid 1)
+Add associated STA f0:0f:ec:b3:a5:ac (added_unassoc=1 auth_alg=0 ft_over_ds=0 reassoc=0 authorized=0 ft_tk=0 fils_tk=0)
+nl80211: Set STA f0:0f:ec:b3:a5:ac
+  * supported rates - hexdump(len=12): 82 84 8b 96 0c 12 18 24 30 48 60 6c
+  * capability=0x411
+  * aid=1
+  * listen_interval=3
+  * flags set=0xa0 mask=0xa0
+nl80211: send_mlme - da= f0:0f:ec:b3:a5:ac noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x10 (WLAN_FC_STYPE_ASSOC_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=0 offchanok=0
+CMD_FRAME - hexdump(len=56): 10 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 11 04 00 00 01 c0 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted; cookie 0x99
+nl80211: Event message available
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp1s0
+nl80211: MLME event 60 (NL80211_CMD_FRAME_TX_STATUS) on wlp1s0(a4:02:b9:19:56:45) A1=f0:0f:ec:b3:a5:ac A2=a4:02:b9:19:56:45
+nl80211: MLME event frame - hexdump(len=56): 10 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 11 04 00 00 01 c0 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX status event
+wlp1s0: Event TX_STATUS (16) received
+mgmt::assoc_resp cb
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: associated (aid 1)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-ASSOCIATE.indication(f0:0f:ec:b3:a5:ac)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-DELETEKEYS.request(f0:0f:ec:b3:a5:ac)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: binding station to interface 'wlp1s0'
+nl80211: wlp1s0[3]: set_sta_vlan(f0:0f:ec:b3:a5:ac, ifname=wlp1s0[3], vlan_id=0)
+nl80211: Set STA flags - ifname=wlp1s0 addr=f0:0f:ec:b3:a5:ac total_flags=0x60 flags_or=0x0 flags_and=0xfffffff1 authorized=0
+wlp1s0: STA f0:0f:ec:b3:a5:ac WPA: event 1 notification
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.1X: start authentication
+EAP: Server state machine created
+IEEE 802.1X: f0:0f:ec:b3:a5:ac BE_AUTH entering state IDLE
+IEEE 802.1X: f0:0f:ec:b3:a5:ac CTRL_DIR entering state FORCE_BOTH
+wlp1s0: STA f0:0f:ec:b3:a5:ac WPA: start authentication
+WPA: f0:0f:ec:b3:a5:ac WPA_PTK entering state INITIALIZE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+WPA: f0:0f:ec:b3:a5:ac WPA_PTK_GROUP entering state IDLE
+WPA: f0:0f:ec:b3:a5:ac WPA_PTK entering state AUTHENTICATION
+WPA: f0:0f:ec:b3:a5:ac WPA_PTK entering state AUTHENTICATION2
+WPA: Re-initialize GMK/Counter on first station
+Get randomness: len=32 entropy=16
+GMK - hexdump(len=32): [REMOVED]
+Get randomness: len=32 entropy=0
+Key Counter - hexdump(len=32): [REMOVED]
+Get randomness: len=32 entropy=0
+GTK - hexdump(len=32): [REMOVED]
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=2 addr=0x55a129e7e7fa key_idx=1 set_tx=1 seq_len=0 key_len=32
+nl80211: KEY_DATA - hexdump(len=32): [REMOVED]
+   broadcast key
+Get randomness: len=32 entropy=0
+WPA: Assign ANonce - hexdump(len=32): 6f d0 8a bc 57 33 8c 3c cc 6f d6 46 e3 f2 69 86 ab 68 54 aa 46 74 d3 cc 10 a5 10 6b 15 dd 63 00
+wlp1s0: hostapd_new_assoc_sta: reschedule ap_handle_timer timeout for f0:0f:ec:b3:a5:ac (300 seconds - ap_max_inactivity)
+IEEE 802.1X: f0:0f:ec:b3:a5:ac AUTH_PAE entering state DISCONNECTED
+nl80211: Set STA flags - ifname=wlp1s0 addr=f0:0f:ec:b3:a5:ac total_flags=0x60 flags_or=0x0 flags_and=0xfffffffe authorized=0
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.1X: unauthorizing port
+IEEE 802.1X: f0:0f:ec:b3:a5:ac AUTH_PAE entering state RESTART
+EAP: EAP entering state INITIALIZE
+wlp1s0: CTRL-EVENT-EAP-STARTED f0:0f:ec:b3:a5:ac
+EAP: EAP entering state SELECT_ACTION
+EAP: getDecision: no identity known yet -> CONTINUE
+EAP: EAP entering state PROPOSE_METHOD
+EAP: getNextMethod: vendor 0 type 1
+wlp1s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+EAP: EAP entering state METHOD_REQUEST
+EAP: building EAP-Request: Identifier 103
+EAP: EAP entering state SEND_REQUEST
+EAP: EAP entering state IDLE
+EAP: retransmit timeout 3 seconds (from dynamic back off; retransCount=0)
+IEEE 802.1X: f0:0f:ec:b3:a5:ac AUTH_PAE entering state CONNECTING
+IEEE 802.1X: f0:0f:ec:b3:a5:ac AUTH_PAE entering state AUTHENTICATING
+IEEE 802.1X: f0:0f:ec:b3:a5:ac BE_AUTH entering state REQUEST
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.1X: Sending EAP Packet (identifier 103)
+wlp1s0: Event EAPOL_TX_STATUS (37) received
+IEEE 802.1X: f0:0f:ec:b3:a5:ac TX status - version=2 type=0 length=5 - ack=1
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=a4:02:b9:19:56:45 A2=f0:0f:ec:b3:a5:ac
+nl80211: MLME event frame - hexdump(len=26): a0 00 3a 01 a4 02 b9 19 56 45 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 20 00 03 00
+nl80211: Frame event
+nl80211: RX frame da=a4:02:b9:19:56:45 sa=f0:0f:ec:b3:a5:ac bssid=a4:02:b9:19:56:45 freq=2437 ssi_signal=-64 fc=0xa0 seq_ctrl=0x20 stype=10 (WLAN_FC_STYPE_DISASSOC) len=26
+wlp1s0: Event RX_MGMT (18) received
+mgmt::disassoc
+disassocation: STA=f0:0f:ec:b3:a5:ac reason_code=3
+wlp1s0: STA f0:0f:ec:b3:a5:ac WPA: event 2 notification
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+WPA: f0:0f:ec:b3:a5:ac WPA_PTK entering state DISCONNECTED
+WPA: f0:0f:ec:b3:a5:ac WPA_PTK entering state INITIALIZE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: disassociated
+EAP: Server state machine removed
+nl80211: sta_remove -> DEL_STATION wlp1s0 f0:0f:ec:b3:a5:ac --> 0 (Success)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-DISASSOCIATE.indication(f0:0f:ec:b3:a5:ac, 3)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-DELETEKEYS.request(f0:0f:ec:b3:a5:ac)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+nl80211: Event message available
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp1s0
+nl80211: Delete station f0:0f:ec:b3:a5:ac
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff a0 00 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 06 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0xa0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+nl80211: send_mlme - da= da:a1:19:06:e3:e9 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=1 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 da a1 19 06 e3 e9 a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted (no ACK); cookie 0x0
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff b0 00 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 06 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0xb0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+nl80211: send_mlme - da= da:a1:19:06:e3:e9 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=1 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 da a1 19 06 e3 e9 a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted (no ACK); cookie 0x0
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff c0 00 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 07 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-70 fc=0x40 seq_ctrl=0xc0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+Ignore Probe Request due to DS Params mismatch: chan=6 != ds.chan=7
+wlp1s0: ap_handle_timer: f0:0f:ec:b3:a5:ac flags=0x1 timeout_next=2
+wlp1s0: Timeout, sending deauthentication info to STA f0:0f:ec:b3:a5:ac
+nl80211: send_mlme - da= f0:0f:ec:b3:a5:ac noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0xc0 (WLAN_FC_STYPE_DEAUTH) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=0 offchanok=0
+CMD_FRAME - hexdump(len=26): c0 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 02 00
+nl80211: Frame TX command accepted; cookie 0x9a
+wlp1s0: STA f0:0f:ec:b3:a5:ac IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-DEAUTHENTICATE.indication(f0:0f:ec:b3:a5:ac, 2)
+wlp1s0: STA f0:0f:ec:b3:a5:ac MLME: MLME-DELETEKEYS.request(f0:0f:ec:b3:a5:ac)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp1s0) alg=0 addr=0x55a12b37b340 key_idx=0 set_tx=1 seq_len=0 key_len=0
+   addr=f0:0f:ec:b3:a5:ac
+nl80211: sta_remove -> DEL_STATION wlp1s0 f0:0f:ec:b3:a5:ac --> -2 (No such file or directory)
+nl80211: Set beacon (beacon_set=1)
+nl80211: Beacon head - hexdump(len=60): 80 00 00 00 ff ff ff ff ff ff a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06
+nl80211: Beacon tail - hexdump(len=69): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=myhotspot
+  * beacon_int=100
+  * dtim_period=2
+nl80211: hidden SSID not in use
+nl80211: privacy=1
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x3
+nl80211: key_mgmt_suites=0x1
+nl80211: pairwise_ciphers=0x18
+nl80211: group_cipher=0x8
+nl80211: beacon_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: proberesp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: assocresp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+nl80211: multicast to unicast disabled on interface wlp1s0
+ap_free_sta: cancel ap_handle_timer for f0:0f:ec:b3:a5:ac
+nl80211: Event message available
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp1s0
+nl80211: MLME event 60 (NL80211_CMD_FRAME_TX_STATUS) on wlp1s0(a4:02:b9:19:56:45) A1=f0:0f:ec:b3:a5:ac A2=a4:02:b9:19:56:45
+nl80211: MLME event frame - hexdump(len=26): c0 00 00 00 f0 0f ec b3 a5 ac a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 02 00
+nl80211: Frame TX status event
+wlp1s0: Event TX_STATUS (16) received
+mgmt::deauth cb
+handle_deauth_cb: STA f0:0f:ec:b3:a5:ac not found
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 50 a3 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-64 fc=0x40 seq_ctrl=0xa350 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 10 a4 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-69 fc=0x40 seq_ctrl=0xa410 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=e8:68:e7:62:7f:86
+nl80211: MLME event frame - hexdump(len=53): 40 00 00 00 ff ff ff ff ff ff e8 68 e7 62 7f 86 ff ff ff ff ff ff 20 a4 00 0b 4d 79 20 46 61 6d 69 6c 79 20 32 01 08 8b 96 82 84 0c 18 30 60 32 04 6c 12 24 48
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=e8:68:e7:62:7f:86 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-65 fc=0x40 seq_ctrl=0xa420 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=53
+nl80211: Event message available
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp1s0
+nl80211: MLME event 59 (NL80211_CMD_FRAME) on wlp1s0(a4:02:b9:19:56:45) A1=ff:ff:ff:ff:ff:ff A2=da:a1:19:06:e3:e9
+nl80211: MLME event frame - hexdump(len=83): 40 00 00 00 ff ff ff ff ff ff da a1 19 06 e3 e9 ff ff ff ff ff ff d0 00 00 00 01 08 82 84 8b 0c 12 96 18 24 03 01 06 32 04 30 48 60 6c 2d 1a 6d 01 17 ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 04 06 0a 00 7f 08 00 00 00 80 00 00 00 40
+nl80211: Frame event
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=da:a1:19:06:e3:e9 bssid=ff:ff:ff:ff:ff:ff freq=2437 ssi_signal=-67 fc=0x40 seq_ctrl=0xd0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=83
+nl80211: send_mlme - da= da:a1:19:06:e3:e9 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=1 offchanok=0
+CMD_FRAME - hexdump(len=129): 50 00 00 00 da a1 19 06 e3 e9 a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 09 6d 79 68 6f 74 73 70 6f 74 01 08 82 84 8b 96 0c 12 18 24 03 01 06 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 02 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 02 01 00 00 50 f2 02 01 00 00 50 f2 01 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+nl80211: Frame TX command accepted (no ACK); cookie 0x0
+Signal 2 received - terminating
+hostapd_interface_deinit_free(0x55a12b370900)
+hostapd_interface_deinit_free: num_bss=1 conf->num_bss=1
+hostapd_interface_deinit(0x55a12b370900)
+wlp1s0: interface state ENABLED->DISABLED
+hostapd_bss_deinit: deinit bss wlp1s0
+wlp1s0: Deauthenticate all stations
+nl80211: send_mlme - da= ff:ff:ff:ff:ff:ff noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 fc=0xc0 (WLAN_FC_STYPE_DEAUTH) nlmode=3
+nl80211: send_mlme -> send_frame
+nl80211: send_frame - Use bss->freq=2437
+nl80211: send_frame -> send_frame_cmd
+nl80211: CMD_FRAME freq=2437 wait=0 no_cck=0 no_ack=0 offchanok=0
+CMD_FRAME - hexdump(len=26): c0 00 00 00 ff ff ff ff ff ff a4 02 b9 19 56 45 a4 02 b9 19 56 45 00 00 03 00
+nl80211: Frame TX command accepted; cookie 0x9b
+wlp1s0: AP-DISABLED 
+hostapd_cleanup(hapd=0x55a12b372ef0 (wlp1s0))
+wlp1s0: CTRL-EVENT-TERMINATING 
+hostapd_free_hapd_data(wlp1s0)
+hostapd_interface_deinit_free: driver=0x55a129ec1ca0 drv_priv=0x55a12b372570 -> hapd_deinit
+nl80211: deinit ifname=wlp1s0 disabled_11b_rates=0
+nl80211: Remove monitor interface: refcount=0
+nl80211: Remove beacon (ifindex=3)
+netlink: Operstate: ifindex=3 linkmode=0 (kernel-control), operstate=6 (IF_OPER_UP)
+nl80211: Set mode ifindex 3 iftype 2 (STATION)
+nl80211: Failed to set interface 3 to mode 2: -16 (Device or resource busy)
+nl80211: Try mode change after setting interface down
+nl80211: Set mode ifindex 3 iftype 2 (STATION)
+nl80211: Mode change succeeded while interface is down
+nl80211: Teardown AP(wlp1s0) - device_ap_sme=0 use_monitor=0
+nl80211: Unsubscribe mgmt frames handle 0x8888dd29a3bf12b9 (AP teardown)
+hostapd_interface_free(0x55a12b370900)
+hostapd_interface_free: free hapd 0x55a12b372ef0
+hostapd_cleanup_iface(0x55a12b370900)
+hostapd_cleanup_iface_partial(0x55a12b370900)
+hostapd_cleanup_iface: free iface=0x55a12b370900

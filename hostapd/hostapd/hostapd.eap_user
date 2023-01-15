@@ -1,0 +1,43 @@
+# Phase 1 users
+"vendortest"		VENDOR-TEST	"vendortest12345"
+"test1"		MD5	"1234567890"
+"tlsuser"	TLS
+"MSCHAPV2user"	MSCHAPV2	"MSCHAPV21234"
+"gtcuser"	GTC	"gtcuser1234"
+#"paxuser"	PAX	"paxuser1234"
+#"paxuser"	PAX	0123456789abcdef0123456789abcdef
+#"pskuser"	PSK	"pskuser1234"
+#"psk.user@example.com"	PSK	0123456789abcdef0123456789abcdef
+#"sake.user@example.com"	SAKE	0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+"ttls"		TTLS
+"not anonymous"	PEAP
+# Default to EAP-SIM and EAP-AKA based on fixed identity prefixes
+"0"*		AKA,TTLS,TLS,PEAP,SIM
+"1"*		TTLS,TLS,PEAP,AKA,SIM
+"2"*		AKA,TTLS,TLS,PEAP,SIM
+"3"*		TTLS,TLS,PEAP,AKA,SIM
+"4"*		AKA,TTLS,TLS,PEAP,SIM
+"5"*		TTLS,TLS,PEAP,AKA,SIM
+"6"*		AKA'
+"7"*		AKA'
+"8"*		AKA'
+"023201"        AKA,SIM
+# Wildcard for all other identities
+*		PEAP,TTLS,TLS,SIM,AKA
+
+# Phase 2 (tunnelled within EAP-PEAP or EAP-TTLS) users
+"test1"		MD5	"1234567890"	[2]
+"DOMAIN\t-mschapv2"	MSCHAPV2	"password"	[2]
+"t-gtc"		GTC	"password"	[2]
+"eaptest"	MSCHAPV2	"eap1234567890"	[2]
+"user12"		MD5,GTC,MSCHAPV2	"password12"	[2]
+"test user"	MSCHAPV2	hash:000102030405060708090a0b0c0d0e0f	[2]
+"ttls-user"	TTLS-PAP,TTLS-CHAP,TTLS-MSCHAP,TTLS-MSCHAPV2	"password"	[2]
+
+# Default to EAP-SIM and EAP-AKA based on fixed identity prefixes in phase 2
+"0"*		AKA	[2]
+"2"*		AKA	[2]
+"4"*		AKA	[2]
+"6"*		AKA'	[2]
+"7"*		AKA'	[2]
+"8"*		AKA'	[2]
