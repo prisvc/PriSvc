@@ -1,7 +1,0 @@
-network={
-    ssid="myhotspot"
-    key_mgmt=WPA-EAP
-    eap=VENDOR-TEST
-    identity="vendortest"
-    password="vendortest12345"
-}

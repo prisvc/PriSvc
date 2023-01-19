@@ -1,7 +1,0 @@
-network={
-    ssid="myhotspot"
-    key_mgmt=WPA-EAP
-    eap=AKA
-    identity="0123456722320100"
-    password="90dca4eda45b53cf0f12d7c9c3bc6a89:cb9cccc4b9258e6dca4760379fb82581:000000000000"
-}
