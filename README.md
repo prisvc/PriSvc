@@ -9,12 +9,11 @@ PRISVC is a demo of the scheme in the paper "PriSvc: Private Service Discovery w
 
 
 
-## install prisvc
-Compile Miracl and PriSVC algorithm code and copy the generated library files (libprisvc.so) to directory (/usr/local/lib). Hostapd and wpa_supplicant are compiled using libprisvc.so
+## Compile ans test prisvc
+
 ```sh
 make algorithm
 make test
-sudo make install
 ```
 
 
