@@ -2040,7 +2040,7 @@ int CredKeyGen(struct ACME_CRED_KEY_C *cred_key)
 //    BNT.bn_printfG1("cred_key->pk.W",cred_key->pk.W);
 #endif
 #if 0
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
  //       BNT.Trf_Big_to_Char(cred_key2.cred_key.sk.y[i],cred_key->sk.y[i]);
 //        BNT.bn_printfBig("cred_key->sk.y[i]",cred_key->sk.y[i]);
@@ -2432,9 +2432,9 @@ int CredKeyGen(struct ACME_CRED_KEY_C *cred_key)
     cred_key->sk.y[6].w[3]=0xc395fe0e970312e7;
 #endif
 #if 0
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_G1_to_Char(cred_key2.cred_key.pk.Z[i][j],cred_key->pk.Z[i][j]);
             BNT.bn_printfG1("cred_key->pk.Z[i][j]",cred_key->pk.Z[i][j]);
@@ -3355,7 +3355,7 @@ int Issue_Send(struct ACME_USER_KEY_C *user_key,struct USER_ATTR_C *attr,struct 
     if (ret !=0) return ret;
     //USER_ATTR to USER_ATTR_C
     BNT.Trf_Big_to_Char(uid2,*uid);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Big_to_Char(attr2.x[i],attr->x[i]);
     //ACME_SPK1 to ACME_SPK1_C
     BNT.Trf_Big_to_Char(spk12.spk1.c,spk1->c);
@@ -3379,16 +3379,16 @@ int Issue_Issuer(struct ACME_CRED_KEY_C *cred_key,struct USER_ATTR_C *attr,struc
     BNT.Trf_Char_to_Big(cred_key->sk.x,cred_key2.cred_key.sk.x);
     BNT.Trf_Char_to_G1(cred_key->pk.W,cred_key2.cred_key.pk.W);
 
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         BNT.Trf_Char_to_Big(cred_key->sk.y[i],cred_key2.cred_key.sk.y[i]);
         BNT.Trf_Char_to_G2(cred_key->pk.X[i],cred_key2.cred_key.pk.X[i]);
         BNT.Trf_Char_to_G1(cred_key->pk.Y[i],cred_key2.cred_key.pk.Y[i]);
     }
 
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_Char_to_G1(cred_key->pk.Z[i][j],cred_key2.cred_key.pk.Z[i][j]);
         }
@@ -3396,7 +3396,7 @@ int Issue_Issuer(struct ACME_CRED_KEY_C *cred_key,struct USER_ATTR_C *attr,struc
 
     //USER_ATTR_C to USER_ATTR
     BNT.Trf_Char_to_Big(*uid,uid2);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Char_to_Big(attr->x[i],attr2.x[i]);
 
     //ACME_SPK1_C to ACME_SPK1
@@ -3430,14 +3430,14 @@ int Issue_Verify(struct ACME_CRED_KEY_PK_C *pk,struct ACME_CRED_U_C *cred_u,stru
 
     //ACME_CRED_KEY_PK_C to ACME_CRED_KEY_PK
     BNT.Trf_Char_to_G1(pk->pk.W,pk2.pk.W);
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         BNT.Trf_Char_to_G2(pk->pk.X[i],pk2.pk.X[i]);
         BNT.Trf_Char_to_G1(pk->pk.Y[i],pk2.pk.Y[i]);
     }
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_Char_to_G1(pk->pk.Z[i][j],pk2.pk.Z[i][j]);
         }
@@ -3450,7 +3450,7 @@ int Issue_Verify(struct ACME_CRED_KEY_PK_C *pk,struct ACME_CRED_U_C *cred_u,stru
 
     //USER_ATTR_C  to USER_ATTR
     BNT.Trf_Char_to_Big(*uid,uid2);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Char_to_Big(attr->x[i],attr2.x[i]);
 
     //ACME_USER_KEY_C to ACME_USER_KEY
@@ -3654,15 +3654,15 @@ int Broadcast(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct
     BNT.Trf_Char_to_Big(cred_key_pk->sk.x,cred_key_pk2.cred_key.sk.x);
     BNT.Trf_Char_to_G1(cred_key_pk->pk.W,cred_key_pk2.cred_key.pk.W);
 
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         BNT.Trf_Char_to_Big(cred_key_pk->sk.y[i],cred_key_pk2.cred_key.sk.y[i]);
         BNT.Trf_Char_to_G2(cred_key_pk->pk.X[i],cred_key_pk2.cred_key.pk.X[i]);
         BNT.Trf_Char_to_G1(cred_key_pk->pk.Y[i],cred_key_pk2.cred_key.pk.Y[i]);
     }
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_Char_to_G1(cred_key_pk->pk.Z[i][j],cred_key_pk2.cred_key.pk.Z[i][j]);
         }
@@ -3680,7 +3680,7 @@ int Broadcast(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct
 
     //USER_ATTR_C  to USER_ATTR
     BNT.Trf_Char_to_Big(*bid,bid2);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Char_to_Big(service_attr->x[i],service_attr2.x[i]);
 
     //ACME_X_C to ACME_X
@@ -3712,7 +3712,7 @@ int Broadcast(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct
     cout<<cipher2.cipher_tok.spk2.gama.g<<endl;
 
     cout<<"\\--------- disclose attributes ---------\\"<<endl;
-    for(int i=0;i<ABCT_PARA_D;i++)
+    for(int i=0;i<FAC_PARA_D;i++)
     {
         cout<<cipher2.disclose.x[i]<<endl;
     }
@@ -3776,20 +3776,24 @@ int Broadcast(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct
 
 
 #endif
+#if 0
     BNT.Trf_GT_to_Char(cipher2.K,cipher->K);
     BNT.Trf_Big_to_Char(cipher2.cipher_M,cipher->cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_G1_to_Char(cipher2.cipher_tok.T1,cipher->cipher_tok.T1);
     BNT.Trf_G1_to_Char(cipher2.cipher_tok.T2,cipher->cipher_tok.T2);
     BNT.Trf_G2_to_Char(cipher2.cipher_tok.sigma1,cipher->cipher_tok.sigma1);
     BNT.Trf_G2_to_Char(cipher2.cipher_tok.sigma2,cipher->cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Big_to_Char(cipher2.cipher_tok.spk2.c,cipher->cipher_tok.spk2.c);
     BNT.Trf_Big_to_Char(cipher2.cipher_tok.spk2.sd,cipher->cipher_tok.spk2.sd);
     BNT.Trf_Big_to_Char(cipher2.cipher_tok.spk2.sk,cipher->cipher_tok.spk2.sk);
     BNT.Trf_GT_to_Char(cipher2.cipher_tok.spk2.gama,cipher->cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+#endif
+    memcpy(cipher->cipher,cipher2.cipher,cipher2.cipher_len);
+    cipher->cipher_len=cipher2.cipher_len;
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Big_to_Char(cipher2.disclose.x[i],cipher->disclose.x[i]);
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
     memcpy(&cipher->share,&cipher2.share,sizeof(CP_ABE_SHARE_INFO));
@@ -3858,15 +3862,15 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
     BNT.Trf_Char_to_Big(cred_key_pk->sk.x,cred_key_pk2.cred_key.sk.x);
     BNT.Trf_Char_to_G1(cred_key_pk->pk.W,cred_key_pk2.cred_key.pk.W);
 
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         BNT.Trf_Char_to_Big(cred_key_pk->sk.y[i],cred_key_pk2.cred_key.sk.y[i]);
         BNT.Trf_Char_to_G2(cred_key_pk->pk.X[i],cred_key_pk2.cred_key.pk.X[i]);
         BNT.Trf_Char_to_G1(cred_key_pk->pk.Y[i],cred_key_pk2.cred_key.pk.Y[i]);
     }
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_Char_to_G1(cred_key_pk->pk.Z[i][j],cred_key_pk2.cred_key.pk.Z[i][j]);
         }
@@ -3916,7 +3920,7 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
     X_c2.X.x[0]=X_c->x[0];X_c2.X.x[1]=X_c->x[1];X_c2.X.x[2]=X_c->x[2];
     //USER_ATTR_C  to USER_ATTR
     BNT.Trf_Char_to_Big(*uid,uid2);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Char_to_Big(client_attr->x[i],client_attr2.x[i]);
 
     //ACME_CIPHER to ACME_CIPHER_C
@@ -3935,7 +3939,7 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
         for(int j=0;j<2*CP_ABE_PARA_K;j++)
             BNT.Trf_Char_to_G1(cipher->ct2[i][j],cipher2.ct2[i][j]);
     }
-    BNT.Trf_Char_to_GT(cipher->K,cipher2.K);
+    //BNT.Trf_Char_to_GT(cipher->K,cipher2.K);
 #endif
 
 
@@ -3970,20 +3974,24 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
 #endif
 #if 1
     //BNT.Trf_Char_to_GT(cipher->K,cipher2.K);
-
+    #if 0
     BNT.Trf_Char_to_Big(cipher->cipher_M,cipher2.cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_Char_to_G1(cipher->cipher_tok.T1,cipher2.cipher_tok.T1);
     BNT.Trf_Char_to_G1(cipher->cipher_tok.T2,cipher2.cipher_tok.T2);
     BNT.Trf_Char_to_G2(cipher->cipher_tok.sigma1,cipher2.cipher_tok.sigma1);
     BNT.Trf_Char_to_G2(cipher->cipher_tok.sigma2,cipher2.cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Char_to_Big(cipher->cipher_tok.spk2.c,cipher2.cipher_tok.spk2.c);
     BNT.Trf_Char_to_Big(cipher->cipher_tok.spk2.sd,cipher2.cipher_tok.spk2.sd);
     BNT.Trf_Char_to_Big(cipher->cipher_tok.spk2.sk,cipher2.cipher_tok.spk2.sk);
     BNT.Trf_Char_to_GT(cipher->cipher_tok.spk2.gama,cipher2.cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    #endif
+    memcpy(cipher2.cipher,cipher->cipher,cipher->cipher_len);
+    cipher2.cipher_len=cipher->cipher_len;
+
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Char_to_Big(cipher->disclose.x[i],cipher2.disclose.x[i]);
 
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
@@ -4019,7 +4027,7 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
     cout<<cipher2.cipher_tok.spk2.gama.g<<endl;
 
     cout<<"\\--------- disclose attributes ---------\\"<<endl;
-    for(int i=0;i<ABCT_PARA_D;i++)
+    for(int i=0;i<FAC_PARA_D;i++)
     {
         cout<<cipher2.disclose.x[i]<<endl;
     }
@@ -4027,19 +4035,19 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
     cout<<"W:"<<endl;
     cout<<cred_key_pk2.cred_key.pk.W.g<<endl;
     cout<<"X:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         cout<<cred_key_pk2.cred_key.pk.X[i].g<<endl;
     }
     cout<<"Y:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         cout<<cred_key_pk2.cred_key.pk.Y[i].g<<endl;
     }
     cout<<"Z:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             cout<<cred_key_pk2.cred_key.pk.Z[i][j].g<<endl;
         }
@@ -4085,19 +4093,24 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
     cout<<C1_msg2.CT.cipher_M<<endl;
 
 #endif
+#if 0
     BNT.Trf_Big_to_Char(C1_msg2.CT.cipher_M,C1_msg->CT.cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_G1_to_Char(C1_msg2.CT.cipher_tok.T1,C1_msg->CT.cipher_tok.T1);
     BNT.Trf_G1_to_Char(C1_msg2.CT.cipher_tok.T2,C1_msg->CT.cipher_tok.T2);
     BNT.Trf_G2_to_Char(C1_msg2.CT.cipher_tok.sigma1,C1_msg->CT.cipher_tok.sigma1);
     BNT.Trf_G2_to_Char(C1_msg2.CT.cipher_tok.sigma2,C1_msg->CT.cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Big_to_Char(C1_msg2.CT.cipher_tok.spk2.c,C1_msg->CT.cipher_tok.spk2.c);
     BNT.Trf_Big_to_Char(C1_msg2.CT.cipher_tok.spk2.sd,C1_msg->CT.cipher_tok.spk2.sd);
     BNT.Trf_Big_to_Char(C1_msg2.CT.cipher_tok.spk2.sk,C1_msg->CT.cipher_tok.spk2.sk);
     BNT.Trf_GT_to_Char(C1_msg2.CT.cipher_tok.spk2.gama,C1_msg->CT.cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+#endif
+    memcpy(C1_msg->CT.cipher,C1_msg2.CT.cipher,C1_msg2.CT.cipher_len);
+    C1_msg->CT.cipher_len=C1_msg2.CT.cipher_len;
+    
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Big_to_Char(C1_msg2.CT.disclose.x[i],C1_msg->CT.disclose.x[i]);
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
     memcpy(&C1_msg->CT.share,&C1_msg2.CT.share,sizeof(CP_ABE_SHARE_INFO));
@@ -4109,13 +4122,13 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
         BNT.Trf_Big_to_Char(C1_msg2.msg_c.K_c.y[i],C1_msg->msg_c.K_c.y[i]);
     }
     BNT.Trf_Big_to_Char(C1_msg2.msg_c.K_c.z,C1_msg->msg_c.K_c.z);
-    //ABCT_TOK yo ABCT_TOK_C
+    //FAC_TOK yo FAC_TOK_C
     BNT.Trf_G1_to_Char(C1_msg2.msg_c.tok_c.T1,C1_msg->msg_c.tok_c.T1);
     BNT.Trf_G1_to_Char(C1_msg2.msg_c.tok_c.T2,C1_msg->msg_c.tok_c.T2);
     BNT.Trf_G2_to_Char(C1_msg2.msg_c.tok_c.sigma1,C1_msg->msg_c.tok_c.sigma1);
     BNT.Trf_G2_to_Char(C1_msg2.msg_c.tok_c.sigma2,C1_msg->msg_c.tok_c.sigma2);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Big_to_Char(C1_msg2.msg_c.Disclose_c.x[i],C1_msg->msg_c.Disclose_c.x[i]);
     //PriSvc_M_C to PriSvc_M_C_C
     BNT.Trf_Big_to_Char(C1_msg2.msg_c.M_c.sid,C1_msg->msg_c.M_c.sid);
@@ -4129,7 +4142,7 @@ int AMA_Cinit(struct ACME_MPK_C *mpk, struct ACME_CRED_KEY_C *cred_key_pk, struc
     BNT.Trf_G1_to_Char(C1_msg2.sigma_c.sig_y,C1_msg->sigma_c.sig_y);
     BNT.Trf_G1_to_Char(C1_msg2.sigma_c.sig_z,C1_msg->sigma_c.sig_z);
 
-    BNT.Trf_GT_to_Char(C1_msg2.CT.K,C1_msg->CT.K);
+  //  BNT.Trf_GT_to_Char(C1_msg2.CT.K,C1_msg->CT.K);
     return ret;
 }
 int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  ACME_CRED_U_C *cred_s,struct  ACME_USER_KEY_C *service_key,struct  Big_C *service_z, struct USER_ATTR_C *service_attr, struct Big_C *sid,
@@ -4183,15 +4196,15 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
     BNT.Trf_Char_to_Big(cred_key_pk->sk.x,cred_key_pk2.cred_key.sk.x);
     BNT.Trf_Char_to_G1(cred_key_pk->pk.W,cred_key_pk2.cred_key.pk.W);
 
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         BNT.Trf_Char_to_Big(cred_key_pk->sk.y[i],cred_key_pk2.cred_key.sk.y[i]);
         BNT.Trf_Char_to_G2(cred_key_pk->pk.X[i],cred_key_pk2.cred_key.pk.X[i]);
         BNT.Trf_Char_to_G1(cred_key_pk->pk.Y[i],cred_key_pk2.cred_key.pk.Y[i]);
     }
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_Char_to_G1(cred_key_pk->pk.Z[i][j],cred_key_pk2.cred_key.pk.Z[i][j]);
         }
@@ -4211,7 +4224,7 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
 
     //USER_ATTR_C  to USER_ATTR
     BNT.Trf_Char_to_Big(*sid,sid2);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Char_to_Big(service_attr->x[i],service_attr2.x[i]);
 
     //ACME_ABE_DK_X_REC_C to ACME_ABE_DK_X_REC
@@ -4276,19 +4289,23 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
                 BNT.Trf_Char_to_G1(C1_msg->CT.ct_rou[i][j][k],C1_msg2.CT.ct_rou[i][j][k]);
         }
     }
+    #if 0
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_M,C1_msg2.CT.cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_Char_to_G1(C1_msg->CT.cipher_tok.T1,C1_msg2.CT.cipher_tok.T1);
     BNT.Trf_Char_to_G1(C1_msg->CT.cipher_tok.T2,C1_msg2.CT.cipher_tok.T2);
     BNT.Trf_Char_to_G2(C1_msg->CT.cipher_tok.sigma1,C1_msg2.CT.cipher_tok.sigma1);
     BNT.Trf_Char_to_G2(C1_msg->CT.cipher_tok.sigma2,C1_msg2.CT.cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_tok.spk2.c,C1_msg2.CT.cipher_tok.spk2.c);
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_tok.spk2.sd,C1_msg2.CT.cipher_tok.spk2.sd);
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_tok.spk2.sk,C1_msg2.CT.cipher_tok.spk2.sk);
     BNT.Trf_Char_to_GT(C1_msg->CT.cipher_tok.spk2.gama,C1_msg2.CT.cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    #endif
+    memcpy(C1_msg2.CT.cipher,C1_msg->CT.cipher,C1_msg->CT.cipher_len);
+    C1_msg2.CT.cipher_len=C1_msg->CT.cipher_len;
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Char_to_Big(C1_msg->CT.disclose.x[i],C1_msg2.CT.disclose.x[i]);
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
     memcpy(&C1_msg2.CT.share,&C1_msg->CT.share,sizeof(CP_ABE_SHARE_INFO));
@@ -4300,13 +4317,13 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
         BNT.Trf_Char_to_Big(C1_msg->msg_c.K_c.y[i],C1_msg2.msg_c.K_c.y[i]);
     }
     BNT.Trf_Char_to_Big(C1_msg->msg_c.K_c.z,C1_msg2.msg_c.K_c.z);
-    //ABCT_TOK yo ABCT_TOK_C
+    //FAC_TOK yo FAC_TOK_C
     BNT.Trf_Char_to_G1(C1_msg->msg_c.tok_c.T1,C1_msg2.msg_c.tok_c.T1);
     BNT.Trf_Char_to_G1(C1_msg->msg_c.tok_c.T2,C1_msg2.msg_c.tok_c.T2);
     BNT.Trf_Char_to_G2(C1_msg->msg_c.tok_c.sigma1,C1_msg2.msg_c.tok_c.sigma1);
     BNT.Trf_Char_to_G2(C1_msg->msg_c.tok_c.sigma2,C1_msg2.msg_c.tok_c.sigma2);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Char_to_Big(C1_msg->msg_c.Disclose_c.x[i],C1_msg2.msg_c.Disclose_c.x[i]);
     //PriSvc_M_C to PriSvc_M_C_C
     BNT.Trf_Char_to_Big(C1_msg->msg_c.M_c.sid,C1_msg2.msg_c.M_c.sid);
@@ -4320,7 +4337,7 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
     BNT.Trf_Char_to_G1(C1_msg->sigma_c.sig_y,C1_msg2.sigma_c.sig_y);
     BNT.Trf_Char_to_G1(C1_msg->sigma_c.sig_z,C1_msg2.sigma_c.sig_z);
 
-    BNT.Trf_Char_to_GT(C1_msg->CT.K,C1_msg2.CT.K);
+   // BNT.Trf_Char_to_GT(C1_msg->CT.K,C1_msg2.CT.K);
 
     //
     ret = prisvc.AMA_S(mpk2,cred_key_pk2,cred_s2,service_key2,service_z2,service_attr2,\
@@ -4355,19 +4372,22 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
                 BNT.Trf_G1_to_Char(S_msg2.CT.ct_rou[i][j][k],S_msg->CT.ct_rou[i][j][k]);
         }
     }
+#if 0
     BNT.Trf_Big_to_Char(S_msg2.CT.cipher_M,S_msg->CT.cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_G1_to_Char(S_msg2.CT.cipher_tok.T1,S_msg->CT.cipher_tok.T1);
     BNT.Trf_G1_to_Char(S_msg2.CT.cipher_tok.T2,S_msg->CT.cipher_tok.T2);
     BNT.Trf_G2_to_Char(S_msg2.CT.cipher_tok.sigma1,S_msg->CT.cipher_tok.sigma1);
     BNT.Trf_G2_to_Char(S_msg2.CT.cipher_tok.sigma2,S_msg->CT.cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Big_to_Char(S_msg2.CT.cipher_tok.spk2.c,S_msg->CT.cipher_tok.spk2.c);
     BNT.Trf_Big_to_Char(S_msg2.CT.cipher_tok.spk2.sd,S_msg->CT.cipher_tok.spk2.sd);
     BNT.Trf_Big_to_Char(S_msg2.CT.cipher_tok.spk2.sk,S_msg->CT.cipher_tok.spk2.sk);
     BNT.Trf_GT_to_Char(S_msg2.CT.cipher_tok.spk2.gama,S_msg->CT.cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+#endif
+
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Big_to_Char(S_msg2.CT.disclose.x[i],S_msg->CT.disclose.x[i]);
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
     memcpy(&S_msg->CT.share,&S_msg2.CT.share,sizeof(CP_ABE_SHARE_INFO));
@@ -4385,7 +4405,7 @@ int AMA_S(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,struct  AC
         BNT.Trf_Big_to_Char(S_msg2.msg_s.Ks.y[i],S_msg->msg_s.Ks.y[i]);
     }
     BNT.Trf_Big_to_Char(S_msg2.msg_s.Ks.z,S_msg->msg_s.Ks.z);
-    BNT.Trf_GT_to_Char(S_msg2.CT.K,S_msg->CT.K);
+  //  BNT.Trf_GT_to_Char(S_msg2.CT.K,S_msg->CT.K);
 
 
     //PriSvc_SSK to PriSvc_SSK_C
@@ -4446,15 +4466,15 @@ int AMA_Cverify(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,stru
     BNT.Trf_Char_to_Big(cred_key_pk->sk.x,cred_key_pk2.cred_key.sk.x);
     BNT.Trf_Char_to_G1(cred_key_pk->pk.W,cred_key_pk2.cred_key.pk.W);
 
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         BNT.Trf_Char_to_Big(cred_key_pk->sk.y[i],cred_key_pk2.cred_key.sk.y[i]);
         BNT.Trf_Char_to_G2(cred_key_pk->pk.X[i],cred_key_pk2.cred_key.pk.X[i]);
         BNT.Trf_Char_to_G1(cred_key_pk->pk.Y[i],cred_key_pk2.cred_key.pk.Y[i]);
     }
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             BNT.Trf_Char_to_G1(cred_key_pk->pk.Z[i][j],cred_key_pk2.cred_key.pk.Z[i][j]);
         }
@@ -4502,7 +4522,7 @@ int AMA_Cverify(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,stru
     X_c2.X.x[0]=X_c->x[0];X_c2.X.x[1]=X_c->x[1];X_c2.X.x[2]=X_c->x[2];
     //USER_ATTR_C  to USER_ATTR
     BNT.Trf_Char_to_Big(*uid,uid2);
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
         BNT.Trf_Char_to_Big(client_attr->x[i],client_attr2.x[i]);
     //////// PriSvc_C1_C to PriSvc_C1
     BNT.Trf_Char_to_Big(C1_msg->x1,C1_msg2.x1);
@@ -4532,19 +4552,21 @@ int AMA_Cverify(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,stru
                 BNT.Trf_Char_to_G1(C1_msg->CT.ct_rou[i][j][k],C1_msg2.CT.ct_rou[i][j][k]);
         }
     }
+    #if 0
     BNT.Trf_Big_to_Char(C1_msg2.CT.cipher_M,C1_msg->CT.cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_Char_to_G1(C1_msg->CT.cipher_tok.T1,C1_msg2.CT.cipher_tok.T1);
     BNT.Trf_Char_to_G1(C1_msg->CT.cipher_tok.T2,C1_msg2.CT.cipher_tok.T2);
     BNT.Trf_Char_to_G2(C1_msg->CT.cipher_tok.sigma1,C1_msg2.CT.cipher_tok.sigma1);
     BNT.Trf_Char_to_G2(C1_msg->CT.cipher_tok.sigma2,C1_msg2.CT.cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_tok.spk2.c,C1_msg2.CT.cipher_tok.spk2.c);
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_tok.spk2.sd,C1_msg2.CT.cipher_tok.spk2.sd);
     BNT.Trf_Char_to_Big(C1_msg->CT.cipher_tok.spk2.sk,C1_msg2.CT.cipher_tok.spk2.sk);
     BNT.Trf_Char_to_GT(C1_msg->CT.cipher_tok.spk2.gama,C1_msg2.CT.cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    #endif
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Char_to_Big(C1_msg->CT.disclose.x[i],C1_msg2.CT.disclose.x[i]);
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
     memcpy(&C1_msg2.CT.share,&C1_msg->CT.share,sizeof(CP_ABE_SHARE_INFO));
@@ -4556,13 +4578,13 @@ int AMA_Cverify(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,stru
         BNT.Trf_Char_to_Big(C1_msg->msg_c.K_c.y[i],C1_msg2.msg_c.K_c.y[i]);
     }
     BNT.Trf_Char_to_Big(C1_msg->msg_c.K_c.z,C1_msg2.msg_c.K_c.z);
-    //ABCT_TOK yo ABCT_TOK_C
+    //FAC_TOK yo FAC_TOK_C
     BNT.Trf_Char_to_G1(C1_msg->msg_c.tok_c.T1,C1_msg2.msg_c.tok_c.T1);
     BNT.Trf_Char_to_G1(C1_msg->msg_c.tok_c.T2,C1_msg2.msg_c.tok_c.T2);
     BNT.Trf_Char_to_G2(C1_msg->msg_c.tok_c.sigma1,C1_msg2.msg_c.tok_c.sigma1);
     BNT.Trf_Char_to_G2(C1_msg->msg_c.tok_c.sigma2,C1_msg2.msg_c.tok_c.sigma2);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Char_to_Big(C1_msg->msg_c.Disclose_c.x[i],C1_msg2.msg_c.Disclose_c.x[i]);
     //PriSvc_M_C to PriSvc_M_C_C
     BNT.Trf_Char_to_Big(C1_msg->msg_c.M_c.sid,C1_msg2.msg_c.M_c.sid);
@@ -4604,19 +4626,21 @@ int AMA_Cverify(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,stru
                 BNT.Trf_Char_to_G1(S_msg->CT.ct_rou[i][j][k],S_msg2.CT.ct_rou[i][j][k]);
         }
     }
+    #if 0
     BNT.Trf_Char_to_Big(S_msg->CT.cipher_M,S_msg2.CT.cipher_M);
-    //ABCT_TOK to ABCT_TOK_C
+    //FAC_TOK to FAC_TOK_C
     BNT.Trf_Char_to_G1(S_msg->CT.cipher_tok.T1,S_msg2.CT.cipher_tok.T1);
     BNT.Trf_Char_to_G1(S_msg->CT.cipher_tok.T2,S_msg2.CT.cipher_tok.T2);
     BNT.Trf_Char_to_G2(S_msg->CT.cipher_tok.sigma1,S_msg2.CT.cipher_tok.sigma1);
     BNT.Trf_Char_to_G2(S_msg->CT.cipher_tok.sigma2,S_msg2.CT.cipher_tok.sigma2);
-    //ABCT_SPK2 to ABCT_SPK2_C
+    //FAC_SPK2 to FAC_SPK2_C
     BNT.Trf_Char_to_Big(S_msg->CT.cipher_tok.spk2.c,S_msg2.CT.cipher_tok.spk2.c);
     BNT.Trf_Char_to_Big(S_msg->CT.cipher_tok.spk2.sd,S_msg2.CT.cipher_tok.spk2.sd);
     BNT.Trf_Char_to_Big(S_msg->CT.cipher_tok.spk2.sk,S_msg2.CT.cipher_tok.spk2.sk);
     BNT.Trf_Char_to_GT(S_msg->CT.cipher_tok.spk2.gama,S_msg2.CT.cipher_tok.spk2.gama);
-    //ABCT_USER_DISCLOSE_ATTR to ABCT_USER_DISCLOSE_ATTR_C
-    for(int i=0;i< ABCT_PARA_D;i++)
+    #endif
+    //FAC_USER_DISCLOSE_ATTR to FAC_USER_DISCLOSE_ATTR_C
+    for(int i=0;i< FAC_PARA_D;i++)
         BNT.Trf_Char_to_Big(S_msg->CT.disclose.x[i],S_msg2.CT.disclose.x[i]);
     //CP_ABE_SHARE_INFO to CP_ABE_SHARE_INFO_C
     memcpy(&S_msg2.CT.share,&S_msg->CT.share,sizeof(CP_ABE_SHARE_INFO));
@@ -4634,7 +4658,7 @@ int AMA_Cverify(struct ACME_MPK_C *mpk,struct  ACME_CRED_KEY_C *cred_key_pk,stru
         BNT.Trf_Char_to_Big(S_msg->msg_s.Ks.y[i],S_msg2.msg_s.Ks.y[i]);
     }
     BNT.Trf_Char_to_Big(S_msg->msg_s.Ks.z,S_msg2.msg_s.Ks.z);
-    BNT.Trf_Char_to_GT(S_msg->CT.K,S_msg2.CT.K);
+  //  BNT.Trf_Char_to_GT(S_msg->CT.K,S_msg2.CT.K);
 
     //
     ret=prisvc.AMA_Cverify(mpk2,cred_key_pk2,cred_c2,client_key2,Dk_C_xrec2,\

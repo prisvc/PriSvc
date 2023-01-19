@@ -38,7 +38,7 @@ int test_so()
     //return 0;
 
     struct ACME_CRED_KEY_PK_C *cred_key_pk=(struct ACME_CRED_KEY_PK_C*)malloc(sizeof(struct ACME_CRED_KEY_PK_C));
-    memcpy(&(cred_key_pk->pk),&(cred_key->pk),sizeof(struct ABCT_CRED_KEY_PK_C));
+    memcpy(&(cred_key_pk->pk),&(cred_key->pk),sizeof(struct FAC_CRED_KEY_PK_C));
 #endif
     printf("/////////////// server setup  ////////////////////\n");
 #if 1
@@ -70,7 +70,7 @@ int test_so()
 #if 1
     struct ACME_CRED_U_C *cred_s=(struct ACME_CRED_U_C*)malloc(sizeof(struct ACME_CRED_U_C));
     struct ACME_USER_PK_C *service_key_upk=(struct ACME_USER_PK_C*)malloc(sizeof(struct ACME_USER_PK_C));
-    memcpy(&(service_key_upk->upk),&(service_key->upk),sizeof(struct ABCT_USER_PK_C));
+    memcpy(&(service_key_upk->upk),&(service_key->upk),sizeof(struct FAC_USER_PK_C));
     ret =Issue_Issuer(cred_key,service_attr,bid,spk1,service_key_upk,cred_s);
     if(ret != 0)
     {
@@ -138,7 +138,7 @@ int test_so()
 
     struct ACME_CRED_U_C *cred_c=(struct ACME_CRED_U_C*)malloc(sizeof(struct ACME_CRED_U_C));
     struct ACME_USER_PK_C *client_key_upk=(struct ACME_USER_PK_C*)malloc(sizeof(struct ACME_USER_PK_C));
-    memcpy(&(client_key_upk->upk),&(client_key->upk),sizeof(struct ABCT_USER_PK_C));
+    memcpy(&(client_key_upk->upk),&(client_key->upk),sizeof(struct FAC_USER_PK_C));
     ret =Issue_Issuer(cred_key,client_attr,sid,spk1,client_key_upk,cred_c);
     if(ret != 0)
     {

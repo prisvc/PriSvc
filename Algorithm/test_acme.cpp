@@ -144,8 +144,8 @@ int speed_test()
     PFC pfc(AES_SECURITY);
     ACME acme(&pfc);
     printf("#################test acme speed start#######################\n");
-    printf("The number of user attributes `n` is %d \n",CP_ABE_PARA_N);
-    printf("The number of disclose attributes is %d \n",ABCT_PARA_D);
+    printf("The number of user attributes `n` is %d \n",FAC_PARA_N);
+    printf("The number of disclose attributes is %d \n",FAC_PARA_D);
     printf("The para of key `k` is %d \n",CP_ABE_PARA_K);
     printf("The para of shar `m` is %d \n",LSS_NC_SHARE_NUM);
     int ret =0;

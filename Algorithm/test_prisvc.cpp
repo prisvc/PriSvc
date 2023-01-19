@@ -35,11 +35,11 @@ int correct()
     cout<<"CP_ABE parameter  N:"<<endl;
     cout<<CP_ABE_PARA_N<<endl;
 
-    cout<<"ABCT parameter N:"<<endl;
-    cout<<ABCT_PARA_N<<endl;
+    cout<<"FAC parameter N:"<<endl;
+    cout<<FAC_PARA_N<<endl;
 
-    cout<<"ABCT parameter D:"<<endl;
-    cout<<ABCT_PARA_D<<endl;
+    cout<<"FAC parameter D:"<<endl;
+    cout<<FAC_PARA_D<<endl;
 
 
     PriSvc prisvc(&pfc);
@@ -162,7 +162,7 @@ int correct()
     cout<<"x:"<<endl;
     cout<<cred_key.cred_key.sk.x<<endl;
     cout<<"y:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         cout<<cred_key.cred_key.sk.y[i]<<endl;
     }
@@ -171,19 +171,19 @@ int correct()
     cout<<"W:"<<endl;
     cout<<cred_key.cred_key.pk.W.g<<endl;
     cout<<"X:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         cout<<cred_key.cred_key.pk.X[i].g<<endl;
     }
     cout<<"Y:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
         cout<<cred_key.cred_key.pk.Y[i].g<<endl;
     }
     cout<<"Z:"<<endl;
-    for(int i=0;i<ABCT_PARA_N+2;i++)
+    for(int i=0;i<FAC_PARA_N+2;i++)
     {
-        for(int j=0;j<ABCT_PARA_N+2;j++)
+        for(int j=0;j<FAC_PARA_N+2;j++)
         {
             cout<<cred_key.cred_key.pk.Z[i][j].g<<endl;
         }
@@ -222,7 +222,7 @@ int correct()
     else
         printf("prisvc.Issue_Send service pass\n");
     cout<<"\\--------- 服务端属性 service_attr ------------\\"<<endl;
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
     {
         cout<<service_attr.x[i]<<endl;
     }
@@ -355,7 +355,7 @@ int correct()
     else
         printf("prisvc.Issue_Send client pass\n");
     cout<<"\\--------- 客户端属性 client_attr ------------\\"<<endl;
-    for(int i=1;i<ABCT_PARA_N+1;i++)
+    for(int i=1;i<FAC_PARA_N+1;i++)
     {
         cout<<client_attr.x[i]<<endl;
     }
@@ -472,6 +472,7 @@ int correct()
     else
         printf("prisvc.Broadcast  pass\n");
     cout<<"\\*********** 服务端广播信息 ***********\\"<<endl;
+    #if 0
     cout<<"\\---------服务端令牌信息 token ------------\\"<<endl;
     cout<<"T1"<<endl;
     cout<<cipher.cipher_tok.T1.g<<endl;
@@ -491,7 +492,7 @@ int correct()
     cout<<cipher.cipher_tok.spk2.sd<<endl;
     cout<<"Gama'"<<endl;
     cout<<cipher.cipher_tok.spk2.gama.g<<endl;
-
+#endif
 
     cout<<"\\--------- CT ------------\\"<<endl;
     cout<<"ct0"<<endl;
@@ -530,12 +531,12 @@ int correct()
             for(int k=0;k<CP_ABE_PARA_K;k++)
                 cout<<cipher.ct_rou[i][j][k].g<<endl;
     }
-
+#if 0
     cout<<"\\--------- M ---------\\"<<endl;
     cout<<cipher.cipher_M<<endl;
-
+#endif
     cout<<"\\--------- disclose attributes ---------\\"<<endl;
-    for(int i=0;i<ABCT_PARA_D;i++)
+    for(int i=0;i<FAC_PARA_D;i++)
     {
         cout<<cipher.disclose.x[i]<<endl;
     }
@@ -596,7 +597,7 @@ int correct()
     }
     cout<<"z:"<<endl;
     cout<<C1_msg.msg_c.K_c.z<<endl;
-
+#if 0
     cout<<"\\---------- tok_c -------------\\"<<endl;
     cout<<"T1"<<endl;
     cout<<C1_msg.CT.cipher_tok.T1.g<<endl;
@@ -606,7 +607,7 @@ int correct()
     cout<<C1_msg.CT.cipher_tok.sigma1.g<<endl;
     cout<<"sigma2"<<endl;
     cout<<C1_msg.CT.cipher_tok.sigma2.g<<endl;
-
+#endif
     cout<<"\\---------- M_c -------------\\"<<endl;
     cout<<"bid"<<endl;
     cout<<C1_msg.msg_c.M_c.bid<<endl;
@@ -620,7 +621,7 @@ int correct()
     cout<<C1_msg.msg_c.M_c.Z.g<<endl;
 
     cout<<"\\--------- disclose attributes ---------\\"<<endl;
-    for(int i=0;i<ABCT_PARA_D;i++)
+    for(int i=0;i<FAC_PARA_D;i++)
     {
         cout<<C1_msg.CT.disclose.x[i]<<endl;
     }
@@ -702,7 +703,7 @@ int correct()
     }
     cout<<"z:"<<endl;
     cout<<S_msg.msg_s.Ks.z<<endl;
-
+#if 0
     cout<<"\\---------- tok_s -------------\\"<<endl;
     cout<<"T1"<<endl;
     cout<<S_msg.CT.cipher_tok.T1.g<<endl;
@@ -712,10 +713,10 @@ int correct()
     cout<<S_msg.CT.cipher_tok.sigma1.g<<endl;
     cout<<"sigma2"<<endl;
     cout<<S_msg.CT.cipher_tok.sigma2.g<<endl;
-
+#endif
 
     cout<<"\\--------- disclose attributes ---------\\"<<endl;
-    for(int i=0;i<ABCT_PARA_D;i++)
+    for(int i=0;i<FAC_PARA_D;i++)
     {
         cout<<S_msg.CT.disclose.x[i]<<endl;
     }
@@ -799,8 +800,8 @@ int speed()
     clock_t start,finish;
     double sum;
     printf("#################test PriSvc speed start#######################\n");
-    printf("The para of ABCT `n` is %d \n",ABCT_PARA_N);
-    printf("The para of ABCT  'd' is %d \n",ABCT_PARA_D);
+    printf("The para of FAC `n` is %d \n",FAC_PARA_N);
+    printf("The para of FAC  'd' is %d \n",FAC_PARA_D);
     printf("The para of ACME `n` is %d \n",CP_ABE_PARA_N);
     printf("The para of ACME `k` is %d \n",CP_ABE_PARA_K);
     printf("The para of LSS `n` is %d \n",LSS_NC_PARA_N);

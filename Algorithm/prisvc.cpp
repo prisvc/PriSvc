@@ -1,7 +1,7 @@
 #include "prisvc.h"
 #include "bn_transfer.h"
 #include "bn_struct.h"
-PriSvc::PriSvc(PFC *p):abct(p),acme(p),mac_ddh(p)
+PriSvc::PriSvc(PFC *p):fac(p),acme(p),mac_ddh(p)
 {
     pfc=p;
 }
@@ -172,8 +172,8 @@ int PriSvc::SetUp(ACME_MPK &mpk,ACME_MSK &msk)
 
 
 
-    return 0;
-    return acme.SetUp(msk,mpk);
+ //   return 0;
+   return acme.SetUp(msk,mpk);
 }
 int PriSvc::CredKeyGen(ACME_CRED_KEY &cred_key)
 {
@@ -324,10 +324,13 @@ int PriSvc::AMA_S(ACME_MPK &mpk, ACME_CRED_KEY &cred_key_pk, ACME_CRED_U &cred_s
     Mc.m[5]=Z;
     ret = mac_ddh.MAC(S_msg.msg_s.Ks,Mc,S_msg.sigma_s);
     if(ret != 0) return -2;
+
+#if 0 //delete
     Big M;
     pfc->random(M);
     ret = acme.Enc(mpk,  cred_key_pk, cred_s, service_key, service_attr, sid, X_s, M, S_msg.CT);
     if(ret !=0) return -4;
+#endif
 
     G1 X1y=pfc->mult(C1_msg.msg_c.M_c.X1,y);
     G2 X2z=pfc->mult(C1_msg.msg_c.M_c.X2,service_z);
@@ -349,9 +352,10 @@ int PriSvc::AMA_Cverify(ACME_MPK &mpk, ACME_CRED_KEY &cred_key_pk, ACME_CRED_U &
                         ACME_X &X_s, ACME_X &X_c, USER_ATTR &client_attr, Big &uid,Big &x, \
                         PriSvc_C1 &C1_msg, PriSvc_S &S_msg,PriSvc_SSK &ssk)
 {
+#if 0 //delete
     ACME_PLAIN plain;
     //int ret =0;
-#if 1
+
     int ret = acme.Den(cred_key_pk, Dk_C_xrec, DK_C_frec, X_s, X_c, S_msg.CT, plain);
     if(ret != 0) return -1;
 #endif
@@ -381,7 +385,7 @@ int PriSvc::AMA_Cverify(ACME_MPK &mpk, ACME_CRED_KEY &cred_key_pk, ACME_CRED_U &
     Mc.m[4]=X2;
     Mc.m[5]=Y;
     Mc.m[5]=Z;
-    ret = mac_ddh.Verify(S_msg.msg_s.Ks,Mc,S_msg.sigma_s);
+    int ret = mac_ddh.Verify(S_msg.msg_s.Ks,Mc,S_msg.sigma_s);
     if(ret !=0) return -2;
     G1 Yx1=pfc->mult(S_msg.Y,C1_msg.x1);
     G2 Zx2=pfc->mult(C1_msg.msg_c.M_c.Z,C1_msg.x2);

@@ -1,9 +1,9 @@
 #ifndef CP_ABE_H
 #define CP_ABE_H
-#include "abct.h"
+#include "fac.h"
 #include "lss_nc.h"
 #include "pairing_3.h"
-#define CP_ABE_PARA_K 3
+#define CP_ABE_PARA_K 2
 #define CP_ABE_PARA_N 3
 
 struct CP_APE_X
@@ -47,7 +47,7 @@ struct CP_ABE_SHARE_INFO
     int rou[LSS_NC_SHARE_NUM];
     int w[LSS_NC_SHARE_NUM];
     int fMatrix[LSS_NC_PARA_N+1][LSS_NC_SHARE_NUM];
-#if 0
+#if 0//test
     GT uBr[LSS_NC_SHARE_NUM];
     GT s_Avj[LSS_NC_SHARE_NUM];
     GT s_Av;

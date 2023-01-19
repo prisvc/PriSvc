@@ -1,7 +1,7 @@
 #ifndef ACME_H
 #define ACME_H
 #include"pairing_3.h"
-#include "abct.h"
+#include "fac.h"
 #include "cp_abe.h"
 
 struct ACME_MSK
@@ -15,29 +15,29 @@ struct ACME_MPK
 };
 struct ACME_CRED_KEY
 {
-    ABCT_CRED_KEY cred_key;
+    FAC_CRED_KEY cred_key;
 
 };
 
 struct ACME_USER_KEY
 {
-    ABCT_USER_KEY user_key;
+    FAC_USER_KEY user_key;
 };
 struct ACME_CRED_KEY_PK
 {
-    ABCT_CRED_KEY_PK pk;
+    FAC_CRED_KEY_PK pk;
 };
 struct ACME_SPK1
 {
-    ABCT_SPK1 spk1;
+    FAC_SPK1 spk1;
 };
 struct ACME_USER_PK
 {
-    ABCT_USER_PK upk;
+    FAC_USER_PK upk;
 };
 struct ACME_CRED_U
 {
-    ABCT_CRED_U cred_u;
+    FAC_CRED_U cred_u;
 };
 struct ACME_ABE_DK_X_REC
 {
@@ -65,19 +65,22 @@ struct ACME_CIPHER
     G1 ct1[2*CP_ABE_PARA_K];
     G1 ct2[LSS_NC_SHARE_NUM][2*CP_ABE_PARA_K];
     G1 ct_rou[CP_ABE_PARA_N+1][LSS_NC_SHARE_NUM][CP_ABE_PARA_K];
-#if 1 //test
+#if 0 //test
     GT K;
-#endif
     Big cipher_M;
-    ABCT_TOK cipher_tok;
+    FAC_TOK cipher_tok;
+#endif
+    char cipher[1360];
+    unsigned int cipher_len;
+    
 
-    ABCT_USER_DISCLOSE_ATTR disclose;
+    FAC_USER_DISCLOSE_ATTR disclose;
     CP_ABE_SHARE_INFO share;
 };
 
 struct ACME_TOK
 {
-    ABCT_TOK tok;
+    FAC_TOK tok;
 };
 struct ACME_PLAIN
 {
@@ -90,7 +93,7 @@ class ACME
 private:
     LSS_NC lss;
     PFC *pfc;
-    ABCT abct;
+    FAC fac;
     CP_ABE cp_abe;
 public:
     ACME(PFC *p);

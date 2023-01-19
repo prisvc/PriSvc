@@ -23,15 +23,15 @@ struct PriSvc_M_C
 struct PriSvc_MSG_C
 {
     MACddh_SK K_c;
-    ABCT_TOK tok_c;
-    ABCT_USER_DISCLOSE_ATTR Disclose_c;
+    FAC_TOK tok_c;
+    FAC_USER_DISCLOSE_ATTR Disclose_c;
     PriSvc_M_C M_c;
 };
 struct PriSvc_MSG_S
 {
     MACddh_SK Ks;
-    ABCT_TOK toks;
-    ABCT_USER_DISCLOSE_ATTR Disclose_s;
+    FAC_TOK toks;
+    FAC_USER_DISCLOSE_ATTR Disclose_s;
 };
 struct PriSvc_C1
 {
@@ -60,7 +60,7 @@ private:
 
     MACddh mac_ddh;
     ACME acme;
-    ABCT abct;
+    FAC fac;
 
 public:
 

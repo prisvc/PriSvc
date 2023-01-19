@@ -1,6 +1,6 @@
 #include "acme.h"
-
-ACME::ACME(PFC *p):lss(p),abct(p),cp_abe(p)
+#include "aes_ctr.h"
+ACME::ACME(PFC *p):lss(p),fac(p),cp_abe(p)
 {
     pfc=p;
 
@@ -17,34 +17,34 @@ int ACME::SetUp(ACME_MSK &msk,ACME_MPK &mpk)
 }
 int ACME::CredKeyGen(ACME_CRED_KEY &cred_key)
 {
-    int ret = abct.CredKeyGen(cred_key.cred_key);
+    int ret = fac.CredKeyGen(cred_key.cred_key);
     if(ret) return -1;
     return 0;
 }
 int ACME::UserKeyGen(ACME_USER_KEY &user_key)
 {
-    int ret = abct.UserKeyGen(user_key.user_key);
+    int ret = fac.UserKeyGen(user_key.user_key);
 
     if(ret) return -1;
     return 0;
 }
 int ACME::IssueUser_Send(ACME_USER_KEY &user_key,USER_ATTR &attr,Big &uid,ACME_SPK1 &spk1)
 {
-    int ret = abct.IssueUser_Send(user_key.user_key,attr,uid,spk1.spk1);
+    int ret = fac.IssueUser_Send(user_key.user_key,attr,uid,spk1.spk1);
     if(ret) return -1;
     return 0;
 
 }
 int ACME::IssueIssuer(ACME_CRED_KEY &cred_key, USER_ATTR &attr, Big &uid, ACME_SPK1 &spk1, ACME_USER_PK &upk, ACME_CRED_U &cred_u)
 {
-    int ret = abct.IssueIssuer(cred_key.cred_key,attr,uid,spk1.spk1,upk.upk,cred_u.cred_u);
+    int ret = fac.IssueIssuer(cred_key.cred_key,attr,uid,spk1.spk1,upk.upk,cred_u.cred_u);
     if(ret) return -1;
     return 0;
 
 }
 int ACME::IssueUser_Verify(ACME_CRED_KEY_PK &pk,ACME_CRED_U &cred_u,USER_ATTR &attr,Big &uid,ACME_USER_KEY &user_key)
 {
-    int ret = abct.IssueUser_Verify(pk.pk,cred_u.cred_u,attr,uid,user_key.user_key);
+    int ret = fac.IssueUser_Verify(pk.pk,cred_u.cred_u,attr,uid,user_key.user_key);
     if(ret) return -1;
     return 0;
 
@@ -175,8 +175,8 @@ int ACME::PolGen(ACME_MSK &msk,ACME_ABE_DK_f_REC &DK_f_rec)
 }
 int ACME::Enc(ACME_MPK &mpk, ACME_CRED_KEY cred_key_pk, ACME_CRED_U &cred_snd, ACME_USER_KEY &user_key, USER_ATTR &attr, Big &uid, ACME_X &X_snd, Big &M, ACME_CIPHER &cipher)
 {
-    ABCT_TOK t_tok;
-    int ret = abct.Show(cred_key_pk.cred_key.pk,cred_snd.cred_u,attr,cipher.disclose,uid,user_key.user_key,t_tok,M);
+    FAC_TOK t_tok;
+    int ret = fac.Show(cred_key_pk.cred_key.pk,cred_snd.cred_u,attr,cipher.disclose,uid,user_key.user_key,t_tok,M);
     if(ret !=0) return -1;
 
     Big s[CP_ABE_PARA_K],s_[CP_ABE_PARA_K],sj[LSS_NC_SHARE_NUM][CP_ABE_PARA_K];
@@ -215,11 +215,11 @@ int ACME::Enc(ACME_MPK &mpk, ACME_CRED_KEY cred_key_pk, ACME_CRED_U &cred_snd, A
     pfc->random(K1);
     pfc->random(K2);
     K=pfc->pairing(K2,K1);
-#if 1//test
+#if 0//test
     cipher.K=K;
 #endif
-    //encrypt ...??
-#if 1//test  AES is not implemented here
+    //encrypt
+#if 0//test  AES is not implemented here
     cipher.cipher_M=M;
     cipher.cipher_tok.T1=t_tok.T1;
     cipher.cipher_tok.T2=t_tok.T2;
@@ -229,8 +229,9 @@ int ACME::Enc(ACME_MPK &mpk, ACME_CRED_KEY cred_key_pk, ACME_CRED_U &cred_snd, A
     cipher.cipher_tok.spk2.gama=t_tok.spk2.gama;
     cipher.cipher_tok.spk2.sd=t_tok.spk2.sd;
     cipher.cipher_tok.spk2.sk=t_tok.spk2.sk;
-
 #endif
+
+
     //ct0
     Big u[CP_ABE_PARA_K];
     for(int i=0;i<CP_ABE_PARA_K;i++)
@@ -356,6 +357,39 @@ int ACME::Enc(ACME_MPK &mpk, ACME_CRED_KEY cred_key_pk, ACME_CRED_U &cred_snd, A
             }
         }
     }
+
+#if 1 //aes_ctr
+    AES_CTR aes_ctr;
+    pfc->start_hash();
+    Big key=pfc->hash_to_aes_key(K);
+    char aes_key[16]={0},aes_iv[8]={0};
+    memcpy(aes_key,key.fn->w,16);
+    memcpy(aes_iv,key.fn->w+2,8);
+
+    aes_ctr.init(aes_key,aes_iv);
+    ret = aes_ctr.encrypt_add(M);
+    if(ret !=0) return -10;
+    ret = aes_ctr.encrypt_add(t_tok.T1);
+    if(ret !=0) return -11;
+    ret = aes_ctr.encrypt_add(t_tok.T2);
+    if(ret !=0) return -12;
+    ret = aes_ctr.encrypt_add(t_tok.sigma1);
+    if(ret !=0) return -13;
+    ret = aes_ctr.encrypt_add(t_tok.sigma2);
+    if(ret !=0) return -14;
+    ret = aes_ctr.encrypt_add(t_tok.spk2.c);
+    if(ret !=0) return -15;
+    ret = aes_ctr.encrypt_add(t_tok.spk2.gama);
+    if(ret !=0) return -16;
+    ret = aes_ctr.encrypt_add(t_tok.spk2.sd);
+    if(ret !=0) return -17;
+    ret = aes_ctr.encrypt_add(t_tok.spk2.sk);
+    if(ret !=0) return -18;
+    ret =aes_ctr.encrypt_data(cipher.cipher,&cipher.cipher_len);
+    if(ret !=0) return -19;
+ //   printf("cipher.cipher_len %d\n",cipher.cipher_len);
+
+#endif
 #if 0//test
 
     for(int k=0;k<LSS_NC_SHARE_NUM;k++)
@@ -447,6 +481,7 @@ int ACME::Den(ACME_CRED_KEY cred_key_pk, ACME_ABE_DK_X_REC &Dk_xrec, ACME_ABE_DK
             }
         }
     }
+#if 0//opt
     GT MT1=pfc->power(*pfc->gt,0);
     for(int j=0;j<LSS_NC_SHARE_NUM;j++)
     {
@@ -477,6 +512,46 @@ int ACME::Den(ACME_CRED_KEY cred_key_pk, ACME_ABE_DK_X_REC &Dk_xrec, ACME_ABE_DK
             MT1=MT1*ET;
         }
     }
+#else
+    GT MT1=pfc->power(*pfc->gt,0);
+    GT ES1=pfc->power(*pfc->gt,0);
+    GT ES2=pfc->power(*pfc->gt,0);
+    for(int k=0;k<CP_ABE_PARA_K;k++)
+    {
+        G2 S1=pfc->mult(*pfc->hh,0);
+        for(int j=0;j<LSS_NC_SHARE_NUM;j++)
+        {
+            if(DK_f_rec.share.w[j]!=0)
+            {
+                                
+                G2 ST=pfc->mult(DK_f_rec.dk[j][k],DK_f_rec.share.w[j]);
+                S1=S1+ST;   
+
+            }
+        }
+        ES1=ES1*pfc->pairing(S1,cipher.ct2_[k]);
+        
+    }
+    for(int k=0;k<2*CP_ABE_PARA_K;k++)
+    {
+        G2 S1=pfc->mult(*pfc->hh,0);
+        for(int j=0;j<LSS_NC_SHARE_NUM;j++)
+        {
+            if(DK_f_rec.share.w[j]!=0)
+            {
+                                
+                G2 ST=pfc->mult(DK_rou[j][k],DK_f_rec.share.w[j]);
+                S1=S1+ST;   
+
+            }
+
+        }
+        ES2=ES2*pfc->pairing(S1,cipher.ct1_[k]);        
+    }
+    MT1= ES1/ES2;
+
+#endif
+
 #if 0//test
 
     if(MT1 != cipher.share.s_Av)
@@ -505,6 +580,7 @@ int ACME::Den(ACME_CRED_KEY cred_key_pk, ACME_ABE_DK_X_REC &Dk_xrec, ACME_ABE_DK
             }
         }
     }
+#if 0//opt
     GT MT2=pfc->power(*pfc->gt,0);
     for(int j=0;j<LSS_NC_SHARE_NUM;j++)
     {
@@ -535,6 +611,43 @@ int ACME::Den(ACME_CRED_KEY cred_key_pk, ACME_ABE_DK_X_REC &Dk_xrec, ACME_ABE_DK
             MT2=MT2*ET;
         }
     }
+#else
+    GT MT2=pfc->power(*pfc->gt,0);
+    GT ES3=pfc->power(*pfc->gt,0);
+    GT ES4=pfc->power(*pfc->gt,0);
+    for(int k=0;k<CP_ABE_PARA_K;k++)
+    {
+        
+        G1 S1=pfc->mult(*pfc->gg,0);
+        for(int j=0;j<LSS_NC_SHARE_NUM;j++)
+        {
+            if(cipher.share.w[j]!=0)
+            {
+                G1 ST=pfc->mult(CT_rou[j][k],cipher.share.w[j]);
+                S1=S1+ST; 
+            }
+
+        }
+        ES3=ES3*pfc->pairing(Dk_xrec.sk.sk2[k],S1);        
+    }
+    
+    for(int k=0;k<2*CP_ABE_PARA_K;k++)
+    {
+        
+        G1 S1=pfc->mult(*pfc->gg,0);
+        for(int j=0;j<LSS_NC_SHARE_NUM;j++)
+        {
+            if(cipher.share.w[j]!=0)
+            {
+                G1 ST=pfc->mult(cipher.ct2[j][k],cipher.share.w[j]);
+                S1=S1+ST; 
+            }
+
+        }
+        ES4=ES4*pfc->pairing(Dk_xrec.sk.sk3[k],S1);        
+    }
+    MT2=ES3/ES4;
+#endif
     K=K*MT1*MT2;
 #if 0//test
     if(K!=cipher.K)
@@ -542,7 +655,8 @@ int ACME::Den(ACME_CRED_KEY cred_key_pk, ACME_ABE_DK_X_REC &Dk_xrec, ACME_ABE_DK
         return -2;
     }
 #endif
-    //decrypt....? AES is not implemented here
+   // return 0;
+#if 0//test
     plain.M=cipher.cipher_M;
     plain.tok.tok.T1=cipher.cipher_tok.T1;
     plain.tok.tok.T2=cipher.cipher_tok.T2;
@@ -552,10 +666,41 @@ int ACME::Den(ACME_CRED_KEY cred_key_pk, ACME_ABE_DK_X_REC &Dk_xrec, ACME_ABE_DK
     plain.tok.tok.spk2.gama=cipher.cipher_tok.spk2.gama;
     plain.tok.tok.spk2.sd=cipher.cipher_tok.spk2.sd;
     plain.tok.tok.spk2.sk=cipher.cipher_tok.spk2.sk;
+#else //aes-ctr
+    AES_CTR aes_ctr;
+    pfc->start_hash();
+    Big key=pfc->hash_to_aes_key(K);
+    char aes_key[16]={0},aes_iv[8]={0};
+    memcpy(aes_key,key.fn->w,16);
+    memcpy(aes_iv,key.fn->w+2,8);
 
-    return abct.Verify(cred_key_pk.cred_key.pk,plain.tok.tok,plain.M,cipher.disclose);
+    aes_ctr.init(aes_key,aes_iv);
+    int ret =aes_ctr.decrypt_data(cipher.cipher,cipher.cipher_len);
+    if(ret !=0) return -19;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.spk2.sk);
+    if(ret !=0) return -18;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.spk2.sd);
+    if(ret !=0) return -17;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.spk2.gama);
+    if(ret !=0) return -16;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.spk2.c);
+    if(ret !=0) return -15;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.sigma2);
+    if(ret !=0) return -14;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.sigma1);
+    if(ret !=0) return -13;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.T2);
+    if(ret !=0) return -12;
+    ret = aes_ctr.decrypt_red(plain.tok.tok.T1);
+    if(ret !=0) return -11;    
+    ret = aes_ctr.decrypt_red(plain.M);
+    if(ret !=0) return -10;  
+   
+#endif
+
+    return fac.Verify(cred_key_pk.cred_key.pk,plain.tok.tok,plain.M,cipher.disclose);
 }
 int ACME::Trace(ACME_CRED_KEY &cred_key,ACME_TOK &tok,Big &uid)
 {
-    return abct.Trace(cred_key.cred_key,tok.tok,uid);
+    return fac.Trace(cred_key.cred_key,tok.tok,uid);
 }
